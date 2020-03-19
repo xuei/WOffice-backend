@@ -22,8 +22,11 @@ const cors         = require('cors');
 
 // IF YOU STILL DIDN'T, GO TO 'configs/passport.js' AND UN-COMMENT OUT THE WHOLE FILE
 
-mongoose
-  .connect('mongodb://localhost/project-management-server', {useNewUrlParser: true})
+mongoose.connect('mongodb://localhost/places', {
+  useCreateIndex: true,
+  useNewUrlParser: true,
+  useUnifiedTopology: true
+})
   .then(x => {
     console.log(`Connected to Mongo! Database name: "${x.connections[0].name}"`)
   })
@@ -79,8 +82,8 @@ app.use(
 
 const index = require('./routes/index');
 app.use('/', index);
-app.use('/api', require('./routes/project-routes'));
-app.use('/api', require('./routes/task-routes'));
+app.use('/api', require('./routes/place-routes'));
+app.use('/api', require('./routes/file-upload-routes'));
 
 
 module.exports = app;
