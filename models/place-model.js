@@ -11,7 +11,8 @@ const placeSchema = new Schema({
   bedrooms: Number,
   sleeps: Number,
   features: Array, // array checkbox
-  dates: Date, /// look for a way to use dates checkbox or something or a function
+  dates: Date,
+  stay: Number, /// look for a way to use dates checkbox or something or a function
   imgUrl: String,
   // imgPath: String,
   owner: String,
