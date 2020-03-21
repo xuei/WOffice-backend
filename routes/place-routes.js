@@ -142,6 +142,8 @@ router.put('/places/:id', (req, res, next) => {
 });
 
 // DELETE route => to delete a specific place
+
+////jlkhkllj
 router.delete('/places/:id', (req, res, next) => {
   if (!mongoose.Types.ObjectId.isValid(req.params.id)) {
     res.status(400).json({ message: 'Specified id is not valid' });
