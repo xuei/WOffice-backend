@@ -20,7 +20,7 @@ router.post('/places', (req, res, next) => {
     admin.auth().verifyIdToken(req.headers.authorization)
       .then((decodedToken) => {
         // console.log('decoded token', decodedToken);
-        const { title, description, country, city, address, bedrooms, sleeps, features, dates, imgUrl} = req.body;
+        const { title, description, country, city, address, bedrooms, sleeps, features, dates, stay, imgUrl} = req.body;
         place.create({
           title,
           description,
@@ -31,6 +31,7 @@ router.post('/places', (req, res, next) => {
           sleeps,
           features,
           dates,
+          stay,
           imgUrl,
           owner: decodedToken.uid
         })
@@ -53,7 +54,7 @@ router.post('/places', (req, res, next) => {
   // console.log("runninggggg")
   // console.log("imageurl backend", req.body.imgUrl)
 
-  const { title, description, country, city, address, bedrooms, sleeps, features, dates, imgUrl } = req.body;
+  const { title, description, country, city, address, bedrooms, sleeps, features, dates, stay, imgUrl } = req.body;
   place.create({
     title,
     description,
@@ -64,6 +65,7 @@ router.post('/places', (req, res, next) => {
     sleeps,
     features,
     dates,
+    stay,
     imgUrl,
     owner: decodedToken.uid
    
