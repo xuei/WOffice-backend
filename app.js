@@ -83,6 +83,14 @@ app.use(
   })
 );
 
+// app.use(
+//   cors({
+//     // credentials: true,
+//     origin: "http://localhost:3001",
+//     Vary: "Origin" // <== this will be the URL of our React app (it will be running on port 3000)
+//   })
+// );
+
 // ROUTES MIDDLEWARE STARTS HERE:
 
 const index = require('./routes/index');

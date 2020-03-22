@@ -49,38 +49,6 @@ router.post('/places', (req, res, next) => {
   }
 });
 
-// POST route => to create a new place
-router.post('/places', (req, res, next) => {
-  // console.log("runninggggg")
-  // console.log("imageurl backend", req.body.imgUrl)
-
-  const { title, description, country, city, address, bedrooms, sleeps, features, dates, stay, imgUrl } = req.body;
-  place.create({
-    title,
-    description,
-    country,
-    city,
-    address,
-    bedrooms,
-    sleeps,
-    features,
-    dates,
-    stay,
-    imgUrl,
-    owner: decodedToken.uid
-   
-  })
-    .then(response => {
-      res.json(response);
-    })
-    .catch(err => {
-      res.json(err);
-    });
-});
-
-
-
-
 
 
 // GET route => to get all the places
